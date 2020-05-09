@@ -1,6 +1,8 @@
 let playedDivs = [...document.getElementsByTagName("div")]
-   .filter(div => div.hasAttribute("played"))
+   .filter(div => div.hasAttribute("played") && div.id)
    .map(div => div.id)
+
+// console.warn('5', playedDivs);
 
 let clipBoardValue = `[...document.getElementsByTagName('div')].forEach(div => div.onclick = () => div.hasAttribute('played') ? div.removeAttribute('played') : div.setAttribute('played', true));`
 clipBoardValue += `${JSON.stringify(playedDivs)}.forEach(id => document.getElementById(id).setAttribute("played", true))`
