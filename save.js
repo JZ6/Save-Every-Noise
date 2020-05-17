@@ -1,15 +1,18 @@
 let playedDivs = [...document.getElementsByTagName("div")]
-   .filter(div => div.hasAttribute("played") && div.id)
-   .map(div => div.id)
+	.filter(div => div.hasAttribute("played") && div.title)
+	.map(div => div.textContent)
+// .map(element => console.warn('2', element))
 
-// console.warn('5', playedDivs);
-
-let clipBoardValue = `[...document.getElementsByTagName('div')].forEach(div => div.onclick = () => div.hasAttribute('played') ? div.removeAttribute('played') : div.setAttribute('played', true));`
-clipBoardValue += `${JSON.stringify(playedDivs)}.forEach(id => document.getElementById(id).setAttribute("played", true))`
+let clipBoardValue = `// ${window.location}\n\n`
+clipBoardValue += `let artistsToLoad = ${JSON.stringify(playedDivs)};\n\n`
+clipBoardValue += `[...document.getElementsByTagName("div")].forEach(div => {
+	div.onclick = () => div.hasAttribute('played') ? div.removeAttribute('played') : div.setAttribute('played', true)
+	artistsToLoad.includes(div.textContent) && div.setAttribute("played", true)
+})`
 
 let el = document.createElement('textarea')
-el.value = clipBoardValue
 
+el.value = clipBoardValue
 el.setAttribute('readonly', '')
 el.style = { position: 'absolute', left: '-9999px' }
 
