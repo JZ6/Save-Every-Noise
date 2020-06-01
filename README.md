@@ -1,7 +1,10 @@
 # Save-Every-Noise
 Save and Load Listened To Artists for http://everynoise.com
 
-# Instruction
+Install from Greasy Fork here:
+https://greasyfork.org/en/scripts/404461-save-every-noise
+
+# Manual Instructions
 
 ## Saving
 
