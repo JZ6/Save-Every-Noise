@@ -1,19 +1,28 @@
 // ==UserScript==
 // @name         Save Every Noise
 // @namespace    https://github.com/JZ6
-// @version      1.0
+// @version      1.2
 // @description  Save and automatically load all the artists you have listend to on http://everynoise.com!
 // @author       JZ6
 // @match        http://everynoise.com/*
 // @grant        none
 // ==/UserScript==
 
+
 const config = {
 	entry: loadSavedArtists,
 	// entry: saveAllPlayedArtists,
 	divUniqueKey: 'textContent',
-	lsSavedArtistsKey: 'playedArtists',
-	importantKeys: ['baseURI', 'id', 'innerHTML', 'innerText', 'outerText', 'textContent', 'title']
+	lsSavedArtistsKey: `playedArtists-${window.location}`,
+	importantKeys: [
+		'baseURI',
+		'id',
+		'innerHTML',
+		'innerText',
+		'outerText',
+		'textContent',
+		'title'
+	]
 }
 
 config.entry()
