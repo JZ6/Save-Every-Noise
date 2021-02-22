@@ -13,7 +13,7 @@ const config = {
 	entry: loadSavedArtists,
 	// entry: saveAllPlayedArtists,
 	divUniqueKey: 'textContent',
-	lsSavedArtistsKey: `playedArtists-${window.location}`,
+	lsSavedArtistsKey: `playedArtists`,
 	importantKeys: [
 		'baseURI',
 		'id',
