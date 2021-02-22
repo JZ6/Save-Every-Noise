@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Save Every Noise
 // @namespace    https://github.com/JZ6
-// @version      1.2
+// @version      1.6
 // @description  Save and automatically load all the artists you have listend to on http://everynoise.com!
 // @author       JZ6
-// @match        http://everynoise.com/*
+// @match        *://everynoise.com/*
 // @grant        none
 // ==/UserScript==
 
